@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en-vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Times New Roman", Times, serif;
+      }
+      li {
+        border: 2px solid rgb(87, 249, 0);
+        text-align: center;
+        padding: 8px;
+        border-radius: 12px;
+        background-color: rgb(26, 161, 66);
+        transition:
+          border-color 0.5s ease,
+          width 0.5s ease,
+          height 0.5s ease,
+          background-color 0.5s ease,
+          font-size 0.5s ease;
+        width: 100px;
+        height: 40px;
+      }
+      li:hover {
+        border-color: rgb(198, 255, 138);
+        width: 110px;
+        height: 45px;
+        background-color: rgb(52, 200, 77);
+        font-size: large;
+      }
+      .header {
+        background-color: rgb(76, 143, 244);
+        display: flex;
+        justify-content: space-between;
+        height: 10vh;
+      }
+      .logo a {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        margin-left: 70px;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .text-logo {
+        font-weight: bold;
+        font-size: 30px;
+        color: white;
+      }
+      .menu ul {
+        display: flex;
+        margin-top: 30px;
+        margin-right: 150px;
+        gap: 35px;
+        list-style: none;
+        color: white;
+      }
+      .section1 {
+        background-image: url(https://tse4.mm.bing.net/th/id/OIP.iOqzslHriXoZHm5glMa58wHaDA?pid=Api&P=0&h=220);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 35vh;
+        position: relative;
+      }
+      .produce-box {
+        position: absolute;
+        top: 70px;
+        left: 40%;
+        color: rgb(57, 48, 61);
+      }
+      .btn-join {
+        position: absolute;
+        margin-top: 30px;
+        left: 70px;
+        height: 35px;
+        width: 180px;
+        color: white;
+        background-color: rgb(240, 121, 10);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: large;
+        transition: all 0.5s ease;
+      }
+      .btn-join:hover {
+        width: 195px;
+        height: 50px;
+        background-color: rgb(255, 72, 22);
+        font-size: 150%;
+      }
+      .main {
+        display: flex;
+        height: 40vh;
+        background-color: aliceblue;
+        gap: 30px;
+        justify-content: center;
+      }
+      .section2 {
+        background-color: white;
+        border: 2px solid black;
+        margin: 30px;
+        height: 200px;
+        width: 300px;
+        padding: 20px;
+        border-color: rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        transition: all 0.5s ease;
+      }
+      .section2:hover {
+        width: 320px;
+        height: 220px;
+        font-size: large;
+      }
+      .section3 {
+        background-color: white;
+        border: 2px solid black;
+        margin: 30px;
+        height: 200px;
+        padding: 20px;
+        width: 300px;
+        border-color: rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        transition: all 0.5s ease;
+      }
+      .section3:hover {
+        width: 320px;
+        height: 220px;
+        font-size: large;
+      }
+      .section4 {
+        background-color: white;
+        border: 2px solid black;
+        margin: 30px;
+        height: 200px;
+        padding: 20px;
+        width: 300px;
+        border-color: rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        transition: all 0.5s ease;
+      }
+      .section4:hover {
+        width: 320px;
+        height: 220px;
+        font-size: large;
+      }
+      .footer {
+        background-color: rgb(73, 71, 86);
+        height: 15vh;
+        color: white;
+      }
+      .p {
+        margin-left: 40%;
+        padding: 20px;
+      }
+      .img {
+        text-align: center;
+      }
+      .text {
+        text-align: center;
+      }
+    </style>
+    <title>WebLearn</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <a href="gpt.html">
+          <img src="image-removebg-preview.png" alt="Logo" />
+          <p class="text-logo">WebLearn</p>
+        </a>
+      </div>
+      <div class="menu">
+        <nav>
+          <ul>
+            <li><a href="gpt.html">Trang chủ</a></li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Khóa học</a></li>
+            <li><a href="#">Liên hệ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="section1">
+        <div class="produce-box">
+          <h1>Học Lập Trình Dễ Dàng!</h1>
+          <p>Nâng cao kỹ năng lập trình của bạn cùng chúng tôi</p>
+          <button class="btn-join">Tham Gia Ngay</button>
+        </div>
+      </section>
+      <div class="main">
+        <section class="section2">
+          <a href="#">
+            <div class="img">
+              <img src="image-removebg-preview 2.png" alt="logo" />
+            </div>
+            <div class="text">
+              <h2>Khóa Học Đa Dạng</h2>
+              <p>Nhiều khóa học từ cơ bản đến nâng cao</p>
+            </div>
+          </a>
+        </section>
+        <section class="section3">
+          <a href="#">
+            <div class="img">
+              <img src="image-removebg-preview 2 (2).png" alt="logo" />
+            </div>
+            <div class="text">
+              <h2>Học Mọi Lúc</h2>
+              <p>Học trực tuyến mọi lúc, mọi nơi</p>
+            </div>
+          </a>
+        </section>
+        <section class="section4">
+          <a href="#">
+            <div class="img">
+              <img src="image-removebg-preview 3.png" alt="logo" />
+            </div>
+            <div class="text">
+              <h2>Hỗ Trợ Tận Tâm</h2>
+              <p>Đội ngũ hỗ trợ nhiệt tình, chuyên nghiệp</p>
+            </div>
+          </a>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <div class="footer">
+        <p class="p">
+          <strong>&copy 2024 WebLearn.</strong> All right reserved
+        </p>
+        <hr class="hr" />
+        <p class="p">
+          <ins><small>Chính sách bảo mật | Điều khoảng sử dụng</small></ins>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
