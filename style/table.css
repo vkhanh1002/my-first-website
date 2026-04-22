@@ -1,0 +1,280 @@
+.table-scroll {
+  margin-top: 70px;
+  height: 80vh;
+  overflow: scroll;
+}
+
+table {
+  table-layout: fixed;
+  margin: 40px 0;
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  gap: 100px;
+  align-items: start;
+}
+
+.banner-left,
+.banner-right {
+  width: 100%;
+  height: 700px;
+  position: relative;
+  overflow: hidden;
+  top: 50px;
+}
+
+.banner-left {
+  left: 50px;
+}
+
+.banner-right {
+  right: 50px;
+}
+
+.move-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  animation: slide 9s infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  30% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  40% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.move-img:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.move-img:nth-child(2) {
+  animation-delay: 3s;
+}
+
+.move-img:nth-child(3) {
+  animation-delay: 6s;
+}
+
+thead {
+  top: 10px;
+  color: white;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  padding: 14px;
+  background: #333;
+  text-align: center;
+  font-size: 15px;
+  z-index: 10;
+}
+
+tbody td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+tbody tr:hover:nth-child(odd) {
+  background-color: #f1f1f1;
+  transition: 0.2s;
+}
+
+.ten {
+  text-align: center;
+  padding-left: 15px;
+  width: 40%;
+}
+
+button {
+  padding: 6px 12px;
+  margin: 2px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  gap: 8px;
+}
+
+.checkbox-container input {
+  display: none;
+}
+
+.checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+}
+
+.checkbox-container input:checked + .checkmark {
+  background-color: #333;
+}
+
+.checkbox-container input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.detail {
+  display: none;
+}
+
+.detail.active {
+  display: table-row;
+}
+
+.anh {
+  display: flex;
+  border-radius: 20px;
+  height: 200px;
+  width: 150px;
+  margin: 20px 50px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  gap: 40px;
+}
+
+.info ul {
+  display: block;
+  list-style: none;
+  margin-top: 0px;
+  padding: 0px;
+}
+
+.info ul li {
+  display: flex;
+  margin: 10px;
+  gap: 5px;
+}
+
+.info ul li strong {
+  min-width: 80px;
+}
+
+tfoot {
+  height: 50px;
+  position: sticky;
+  bottom: 0;
+  background: #333;
+  color: #eee;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+}
+@media (max-width: 1100px) {
+  .banner-left {
+    display: none;
+  }
+  .banner-right {
+    display: none;
+  }
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+.table-area {
+  position: relative;
+}
+.button-gr {
+  position: absolute;
+  top: 0px;
+  right: 40px;
+  display: flex;
+}
+#button-mua,
+#button-xoa {
+  margin: 10px;
+  padding: 15px 20px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+#button-mua {
+  background: rgb(88, 213, 88);
+}
+
+#button-xoa {
+  background: rgb(255, 103, 103);
+}
+
+#qr-modal.hidden {
+  display: none;
+}
+.qr-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#qr-modal {
+  z-index: 1001;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.qr-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
