@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="../img/favicon.ico"
+      type="image/x-icon"
+      border-radius="50%"
+    />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/sanpham.css" />
+    <script src=""></script>
+
+    <title>Sản Phẩm</title>
+  </head>
+
+  <body>
+    <header>
+      <a
+        href="../index.html"
+        style="text-decoration-line: none"
+        id="icon-header"
+        class="header-inline"
+      >
+        <img src="../img/logo.ico" alt="Logo" width="100px" />
+        <h1>Inkognito</h1>
+      </a>
+      <nav id="nav-header">
+        <a href="../index.html"><p>Trang Chủ</p></a>
+        <a href="../Sanpham/index.html" class="active"><p>Sản Phẩm</p></a>
+        <a href="../Giohang/index.html"><p>Giỏ Hàng</p></a>
+        <a href="#"><p>Blog</p></a>
+      </nav>
+      <nav id="login" class="header-inline">
+        <a href="../login/login.html">Đăng Nhập </a>
+        <p>/</p>
+        <a href="../login/login.html?action=register">Đăng Kí</a>
+      </nav>
+      <div id="nav-user-info">
+        <div class="avatar" id="nav-avatar">U</div>
+        <span class="username" id="nav-username">User</span>
+        <button id="btn-logout" onclick="logout()">Đăng xuất</button>
+      </div>
+    </header>
+
+    <div class="search-bar">
+      <span class="search-bar-label">Tìm kiếm và lọc</span>
+      <input
+        type="search"
+        placeholder="Tìm kiếm sách..."
+        id="searchInput"
+        autocomplete="off"
+      />
+    </div>
+
+    <div class="layout">
+      <aside class="aside-left">
+        <h3>Thể loại</h3>
+        <ul>
+          <li>Thiếu nhi</li>
+          <li>Tiểu thuyết</li>
+          <li>Trinh thám</li>
+          <li>Giả tưởng</li>
+          <li>Văn học Việt Nam</li>
+          <li>Kỹ năng sống</li>
+          <li>Văn học kinh điển</li>
+        </ul>
+      </aside>
+      <main class="product-main">
+        <div class="product-list" id="productList"></div>
+      </main>
+    </div>
+
+    <section
+      class="detail-overlay hidden"
+      id="detailOverlay"
+      aria-hidden="true"
+    >
+      <div class="detail-page">
+        <button type="button" class="detail-close" id="detailCloseBtn">
+          ← Quay lại
+        </button>
+        <div class="detail-top">
+          <div class="detail-left">
+            <div class="detail-image-wrap">
+              <img id="detailImage" src="" alt="Ảnh sách" />
+            </div>
+            <div class="detail-actions">
+              <button type="button" class="btn-cart">Thêm vào giỏ hàng</button>
+              <button type="button" class="btn-buy">Mua</button>
+            </div>
+          </div>
+          <div class="detail-right">
+            <div class="detail-info" id="detailInfo"></div>
+            <div class="detail-summary" id="detailSummary"></div>
+          </div>
+        </div>
+        <h3 class="suggest-title">Gợi ý cho bạn</h3>
+        <div class="suggest-list" id="suggestList"></div>
+      </div>
+    </section>
+    <footer>
+      <h3>© Liên hệ:</h3>
+      Địa chỉ: A2-613 Đại học Kinh tế Quốc dân<br />
+      Email: cskh@inkognito.com.vn<br />
+      Số điện thoại: 19001124
+    </footer>
+    <script src="../js/sanpham.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const sess = JSON.parse(localStorage.getItem("bs_session") || "null");
+
+        const guestArea = document.getElementById("login");
+        const userInfo = document.getElementById("nav-user-info");
+        if (sess && (!sess.exp || Date.now() < sess.exp)) {
+          if (guestArea) guestArea.style.display = "none";
+          if (userInfo) {
+            userInfo.style.display = "flex"; // Hiện cụm Avatar + Tên
+            document.getElementById("nav-avatar").textContent =
+              sess.name[0].toUpperCase();
+            document.getElementById("nav-username").textContent = sess.name
+              .split(" ")
+              .pop();
+          }
+        }
+      });
+      function logout() {
+        localStorage.removeItem("bs_session");
+        window.location.reload();
+      }
+    </script>
+  </body>
+</html>
